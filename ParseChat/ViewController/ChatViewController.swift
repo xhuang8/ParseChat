@@ -14,12 +14,14 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var chatMessageField: UITextField!
     
     var messages: [PFObject] = []
     var currentUser = PFUser.current()
     
+    var refreshControl: UIRefreshControl!
     var window = UIWindow()
     
     override func viewDidLoad() {
@@ -31,6 +33,12 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 50
         
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(ChatViewController.didPullToRefresh(_:)), for: .valueChanged)
+        tableView.insertSubview(refreshControl, at: 0)
+        
+        self.activityIndicator.startAnimating()
+        
         fetchMessage()
         
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.onTimer), userInfo: nil, repeats: true)
@@ -38,6 +46,12 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //fetchMessage()
         // Do any additional setup after loading the view.
     }
+    
+    @objc func didPullToRefresh(_ refreshControl: UIRefreshControl)
+    {
+        fetchMessage()
+    }
+    
     
     @IBAction func sendButton(_ sender: Any) {
         let chatMessage = PFObject(className: "Message")
@@ -115,6 +129,8 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 }
                 self.messages = posts
                 self.tableView.reloadData()
+                self.refreshControl.endRefreshing()
+                self.activityIndicator.stopAnimating()
             } else {
                 print(error!.localizedDescription)
             }
