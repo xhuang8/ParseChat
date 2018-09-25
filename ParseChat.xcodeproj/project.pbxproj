@@ -15,6 +15,8 @@
 		0B19E6F421589333005895DF /* ParseChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B19E6F321589333005895DF /* ParseChatTests.swift */; };
 		0B19E6FF21589333005895DF /* ParseChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B19E6FE21589333005895DF /* ParseChatUITests.swift */; };
 		0B19E70D21589659005895DF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B19E70C21589659005895DF /* LoginViewController.swift */; };
+		0B530B512159D6D70016BCED /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B530B502159D6D70016BCED /* ChatViewController.swift */; };
+		0B530B542159DEC20016BCED /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B530B532159DEC20016BCED /* ChatCell.swift */; };
 		4052061B8F603BC6451D09BD /* Pods_ParseChatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE067E7F89803D4563D6740B /* Pods_ParseChatUITests.framework */; };
 		7801EFE4328EC633599C4B03 /* Pods_ParseChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A2FD7715DBB4490C28D22A3 /* Pods_ParseChatTests.framework */; };
 		AC562085B0DF724EB1FBA690 /* Pods_ParseChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EC8EA753B8AC47F0755CECF /* Pods_ParseChat.framework */; };
@@ -52,6 +54,8 @@
 		0B19E6FE21589333005895DF /* ParseChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseChatUITests.swift; sourceTree = "<group>"; };
 		0B19E70021589333005895DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B19E70C21589659005895DF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0B530B502159D6D70016BCED /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		0B530B532159DEC20016BCED /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		1A2FD7715DBB4490C28D22A3 /* Pods_ParseChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParseChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53A1D122BABA54B6FE172BC0 /* Pods-ParseChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParseChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParseChat/Pods-ParseChat.release.xcconfig"; sourceTree = "<group>"; };
 		8EC8EA753B8AC47F0755CECF /* Pods_ParseChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParseChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +120,7 @@
 		0B19E6DD21589330005895DF /* ParseChat */ = {
 			isa = PBXGroup;
 			children = (
+				0B530B522159DEAB0016BCED /* Views */,
 				0B19E70E21589660005895DF /* ViewController */,
 				0B19E6DE21589330005895DF /* AppDelegate.swift */,
 				0B19E6E021589330005895DF /* ViewController.swift */,
@@ -149,8 +154,17 @@
 			isa = PBXGroup;
 			children = (
 				0B19E70C21589659005895DF /* LoginViewController.swift */,
+				0B530B502159D6D70016BCED /* ChatViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		0B530B522159DEAB0016BCED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0B530B532159DEC20016BCED /* ChatCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		1A8F8458DDD817B4E8F1F2D7 /* Pods */ = {
@@ -390,6 +404,8 @@
 			files = (
 				0B19E70D21589659005895DF /* LoginViewController.swift in Sources */,
 				0B19E6E121589330005895DF /* ViewController.swift in Sources */,
+				0B530B512159D6D70016BCED /* ChatViewController.swift in Sources */,
+				0B530B542159DEC20016BCED /* ChatCell.swift in Sources */,
 				0B19E6DF21589330005895DF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
